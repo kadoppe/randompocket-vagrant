@@ -15,10 +15,10 @@ Vagrant.configure(2) do |config|
     config.hostsupdater.remove_on_suspend = true
   end
 
-  config.vm.hostname = 'randompocket.dev'
+  config.vm.hostname = 'api.randompocket.dev'
   config.vm.network :private_network, ip: '172.17.8.24'
 
-  config.vm.synced_folder '../randompocket', '/share'
+  config.vm.synced_folder '../randompocket-api', '/share/randompocket-api'
 
   config.vm.provision :ansible do |ansible|
     ansible.playbook = '../randompocket-ansible-playbook/site.yml'
